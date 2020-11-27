@@ -1,0 +1,6 @@
+framework module Pods_MyPersonalMovieTheater {
+  umbrella header "Pods-MyPersonalMovieTheater-umbrella.h"
+
+  export *
+  module * { export * }
+}
