@@ -67,32 +67,32 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-vw-1aN">
                                                     <rect key="frame" x="94" y="45" width="300" height="150"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wonder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7W-pw-3jH">
-                                                            <rect key="frame" x="71" y="22" width="209" height="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wonder" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e7W-pw-3jH">
+                                                            <rect key="frame" x="71" y="15" width="209" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director | Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUy-Tu-de4">
-                                                            <rect key="frame" x="71" y="61" width="209" height="15"/>
+                                                            <rect key="frame" x="71" y="54" width="209" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                             <color key="textColor" systemColor="systemGray6Color"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time | 100min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSX-V1-EB3">
-                                                            <rect key="frame" x="71" y="81" width="209" height="15"/>
+                                                            <rect key="frame" x="71" y="74" width="209" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                             <color key="textColor" systemColor="systemGray6Color"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2O-qW-ZKK">
-                                                            <rect key="frame" x="71" y="114" width="30" height="24"/>
+                                                            <rect key="frame" x="71" y="107" width="30" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <color key="textColor" red="1" green="0.85638968114163272" blue="0.29443282613907185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y07-Er-IVy" customClass="CosmosView" customModule="Cosmos">
-                                                            <rect key="frame" x="106" y="116" width="174" height="20"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlH-mm-0hn" customClass="CosmosView" customModule="Cosmos">
+                                                            <rect key="frame" x="106" y="109" width="174" height="20"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -118,18 +118,19 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.94171943295992833" green="0.94529693870321629" blue="1" alpha="0.093680331581517173" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="e7W-pw-3jH" firstAttribute="top" secondItem="aBY-vw-1aN" secondAttribute="top" constant="22" id="2hI-qh-2bU"/>
+                                                        <constraint firstItem="e7W-pw-3jH" firstAttribute="top" secondItem="aBY-vw-1aN" secondAttribute="top" constant="15" id="2hI-qh-2bU"/>
+                                                        <constraint firstItem="YlH-mm-0hn" firstAttribute="centerY" secondItem="n2O-qW-ZKK" secondAttribute="centerY" id="5H5-GI-OnL"/>
                                                         <constraint firstItem="n2O-qW-ZKK" firstAttribute="top" secondItem="tSX-V1-EB3" secondAttribute="bottom" constant="18" id="8SZ-Lt-uqk"/>
                                                         <constraint firstItem="tSX-V1-EB3" firstAttribute="leading" secondItem="YUy-Tu-de4" secondAttribute="leading" id="B6Y-MQ-8cK"/>
                                                         <constraint firstItem="YUy-Tu-de4" firstAttribute="leading" secondItem="e7W-pw-3jH" secondAttribute="leading" id="BMB-q0-8Qk"/>
                                                         <constraint firstAttribute="trailing" secondItem="e7W-pw-3jH" secondAttribute="trailing" constant="20" id="CT0-bt-OjI"/>
                                                         <constraint firstItem="tSX-V1-EB3" firstAttribute="trailing" secondItem="YUy-Tu-de4" secondAttribute="trailing" id="GKN-SL-D5x"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YlH-mm-0hn" secondAttribute="trailing" constant="20" symbolic="YES" id="HDW-5f-Zku"/>
                                                         <constraint firstItem="YUy-Tu-de4" firstAttribute="trailing" secondItem="e7W-pw-3jH" secondAttribute="trailing" id="HIE-BZ-1za"/>
                                                         <constraint firstAttribute="width" constant="300" id="HRZ-rA-6di"/>
                                                         <constraint firstItem="tSX-V1-EB3" firstAttribute="top" secondItem="YUy-Tu-de4" secondAttribute="bottom" constant="5" id="Uhk-Jd-IQa"/>
-                                                        <constraint firstItem="y07-Er-IVy" firstAttribute="leading" secondItem="n2O-qW-ZKK" secondAttribute="trailing" constant="5" id="gTx-sY-aG2"/>
-                                                        <constraint firstItem="y07-Er-IVy" firstAttribute="centerY" secondItem="n2O-qW-ZKK" secondAttribute="centerY" id="jc5-LH-zgs"/>
-                                                        <constraint firstItem="y07-Er-IVy" firstAttribute="trailing" secondItem="tSX-V1-EB3" secondAttribute="trailing" id="m93-Ew-NjM"/>
+                                                        <constraint firstItem="YlH-mm-0hn" firstAttribute="leading" secondItem="n2O-qW-ZKK" secondAttribute="trailing" constant="5" id="lmP-Nz-ACd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="YlH-mm-0hn" secondAttribute="bottom" constant="21" id="nYc-jn-GLI"/>
                                                         <constraint firstItem="YUy-Tu-de4" firstAttribute="top" secondItem="e7W-pw-3jH" secondAttribute="bottom" constant="15" id="opD-J9-8Vw"/>
                                                         <constraint firstItem="n2O-qW-ZKK" firstAttribute="leading" secondItem="tSX-V1-EB3" secondAttribute="leading" id="z3u-yw-yB9"/>
                                                     </constraints>
@@ -160,7 +161,6 @@
                                         <connections>
                                             <outlet property="movieDirector" destination="YUy-Tu-de4" id="a6K-Tc-zt8"/>
                                             <outlet property="movieImg" destination="pvZ-z8-Gml" id="ILV-0a-xAa"/>
-                                            <outlet property="movieRatinginStars" destination="y07-Er-IVy" id="wrL-H4-ubf"/>
                                             <outlet property="movieRunningTime" destination="tSX-V1-EB3" id="TnY-N1-fuf"/>
                                             <outlet property="movieTitle" destination="e7W-pw-3jH" id="YkA-wW-VLV"/>
                                             <outlet property="movieTotalRating" destination="n2O-qW-ZKK" id="W0G-oH-ALK"/>
@@ -183,6 +183,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3ZE-rF-uYF"/>
+                    <connections>
+                        <outlet property="tableView" destination="E90-au-Jcw" id="Yz3-0K-n0e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,11 +313,6 @@
             <point key="canvasLocation" x="1483" y="319"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="y07-Er-IVy">
-            <size key="intrinsicContentSize" width="108" height="20"/>
-        </designable>
-    </designables>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="joker" width="400" height="591"/>

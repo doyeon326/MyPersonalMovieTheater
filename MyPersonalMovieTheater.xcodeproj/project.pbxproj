@@ -90,6 +90,7 @@
 		EA5EAFC92570DE29003075FD /* MyPersonalMovieTheater */ = {
 			isa = PBXGroup;
 			children = (
+				EA5EB005257142AD003075FD /* View Model */,
 				EA5EAFFA25712D52003075FD /* Model */,
 				EA5EAFE42570E161003075FD /* Controllers */,
 				EA5EAFE22570E0F9003075FD /* Views */,
@@ -160,6 +161,13 @@
 				EA5EB0022571344C003075FD /* VideoResults.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EA5EB005257142AD003075FD /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
