@@ -6,7 +6,9 @@
 //
 
 import Foundation
-//MARK: what is the difference between Codable VS Decodable? 
+//MARK: what is the difference between Codable VS Decodable?
+//codable = enclodable + decodable
+
 struct Movie: Decodable {
     let id: Int
     let posterPath: String
