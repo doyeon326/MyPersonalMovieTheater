@@ -14,7 +14,7 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieDirector: UILabel!
     @IBOutlet weak var movieTotalRating: UILabel!
-    @IBOutlet weak var movieRunningTime: UILabel!
+    @IBOutlet weak var movieReleaseDate: UILabel!
     @IBOutlet weak var movieRatinginStars: CosmosView!
     
     override func awakeFromNib() {

@@ -56,4 +56,50 @@ class API {
         }
         
     }
+    
+    static func loadMovieDetail(_ movieId: Int, completion: @escaping ([Genres]) -> Void) {
+        let session = URLSession(configuration: .default)
+        var urlComponents = URLComponents(string: "https://api.themoviedb.org/3/movie/\(movieId)?")!
+        //https://api.themoviedb.org/3/movie/62345?api_key=7e9668bd55961d140e7ec7cbf4f25cf4&language=en-US
+        let apiQuery = URLQueryItem(name: "api_key", value: apiKey)
+        let languageQuery = URLQueryItem(name: "language", value: "en-US")
+        urlComponents.queryItems?.append(apiQuery)
+        urlComponents.queryItems?.append(languageQuery)
+        
+        let requestURL = urlComponents.url!
+        let dataTask = session.dataTask(with: requestURL) { data, response, error in
+            let successRange = 200..<300
+            
+            guard error == nil,
+                  let statusCode = (response as? HTTPURLResponse)?.statusCode,
+                  successRange.contains(statusCode) else {
+                completion([])
+                return
+            }
+            guard let resultData = data else {
+                 completion([])
+                return
+            }
+            let movieDetail = API.decodeMovieDetail(resultData)
+            print("##success!")
+            completion(movieDetail)
+        }
+        dataTask.resume()
+    }
+    
+    
+    static func decodeMovieDetail(_ data: Data) -> [Genres] {
+        do{
+            let decoder = JSONDecoder()
+            let response = try decoder.decode(MovieDetailResults.self, from: data)
+            let genres = response.genres
+            return genres
+        } catch let error {
+            print("##decodingError: \(error.localizedDescription)")
+            return []
+        }
+        
+    }
+    
+    
 }

@@ -23,4 +23,6 @@ struct Movie: Decodable {
         case id, posterPath = "poster_path", videoPath, backdrop = "backdrop_path", title, releaseDate = "release_date", rating = "vote_average", overview
     }
     
+    
+    
 }

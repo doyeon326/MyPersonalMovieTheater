@@ -10,8 +10,8 @@ import Kingfisher
 
 class MovieViewController: UIViewController {
 
-    var movieViewModel = MovieViewModel()
-    
+    var movieViewModel = MovieViewModel.shared
+    let baseUrl = "https://image.tmdb.org/t/p/w185/"
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,6 +25,12 @@ class MovieViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = self.tableView.indexPathForSelectedRow{
+            MovieViewModel.shared.updateMovieIndex(indexPath.row)
+        }
+ 
+    }
 }
 
 extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
@@ -36,8 +42,10 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as? MovieTableViewCell else { return UITableViewCell() }
         cell.movieTitle.text = movieViewModel.movies[indexPath.row].title
         cell.movieTotalRating.text = "\(movieViewModel.movies[indexPath.row].rating)"
-        let url = URL(string: "https://image.tmdb.org/t/p/w185/\(movieViewModel.movies[indexPath.row].posterPath)")
+        let url = URL(string: "\(baseUrl)\(movieViewModel.movies[indexPath.row].posterPath)")
         cell.movieImg.kf.setImage(with: url)
+        cell.movieRatinginStars.rating = movieViewModel.movies[indexPath.row].rating / 2
+        cell.movieReleaseDate.text = "Release Date: \(movieViewModel.movies[indexPath.row].releaseDate)"
         
         return cell
     }
