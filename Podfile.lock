@@ -1,22 +1,26 @@
 PODS:
   - Cosmos (23.0.0)
-  - Kingfisher (5.15.7):
-    - Kingfisher/Core (= 5.15.7)
-  - Kingfisher/Core (5.15.7)
+  - Kingfisher (5.15.8):
+    - Kingfisher/Core (= 5.15.8)
+  - Kingfisher/Core (5.15.8)
+  - youtube-ios-player-helper (1.0.2)
 
 DEPENDENCIES:
   - Cosmos (~> 23.0)
   - Kingfisher (~> 5.0)
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
     - Cosmos
     - Kingfisher
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
-  Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
+  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
+  youtube-ios-player-helper: 40b96e52c22445f0fdc43731cefa32c67075ff81
 
-PODFILE CHECKSUM: e1ed46c9b8d323d61dba6a0ebf335814862ecfbd
+PODFILE CHECKSUM: 9725b15d0e691113bfe909a2b74b368eb2b82373
 
 COCOAPODS: 1.9.3

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="Krh-oQ-0xV">
+            <objects>
+                <viewController storyboardIdentifier="PlayerViewController" id="ieT-0B-4Ma" customClass="PlayerViewController" customModule="MyPersonalMovieTheater" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EvK-3k-feB">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vq-2J-00N" customClass="YTPlayerView">
+                                <rect key="frame" x="44" y="0.0" width="758" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhW-kN-FF3">
+                                <rect key="frame" x="810" y="20" width="46" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="ieT-0B-4Ma" eventType="touchUpInside" id="gfa-kh-6Lr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Zs-gE-2vu"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3vq-2J-00N" firstAttribute="leading" secondItem="2Zs-gE-2vu" secondAttribute="leading" id="4Lr-BK-plu"/>
+                            <constraint firstItem="2Zs-gE-2vu" firstAttribute="trailing" secondItem="3vq-2J-00N" secondAttribute="trailing" constant="50" id="67g-s3-mYR"/>
+                            <constraint firstAttribute="bottom" secondItem="3vq-2J-00N" secondAttribute="bottom" id="Kbh-3b-iCe"/>
+                            <constraint firstItem="3vq-2J-00N" firstAttribute="top" secondItem="2Zs-gE-2vu" secondAttribute="top" id="caf-M1-VFx"/>
+                            <constraint firstItem="ZhW-kN-FF3" firstAttribute="trailing" secondItem="2Zs-gE-2vu" secondAttribute="trailing" constant="4" id="djR-mE-GSj"/>
+                            <constraint firstItem="ZhW-kN-FF3" firstAttribute="top" secondItem="2Zs-gE-2vu" secondAttribute="top" constant="20" id="x7d-vH-xhw"/>
+                            <constraint firstItem="ZhW-kN-FF3" firstAttribute="leading" secondItem="3vq-2J-00N" secondAttribute="trailing" constant="8" symbolic="YES" id="xD2-eA-bvk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="3vq-2J-00N" id="sKl-Ws-h0f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hkM-KS-sDx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-914.0625" y="-162.31884057971016"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>

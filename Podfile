@@ -7,5 +7,7 @@ target 'MyPersonalMovieTheater' do
 
   # Pods for MyPersonalMovieTheater
   pod 'Cosmos', '~> 23.0'
-  pod 'Kingfisher', '~> 5.0'
+  pod 'Kingfisher', '~> 5.0'	
+  pod 'youtube-ios-player-helper'
+
 end

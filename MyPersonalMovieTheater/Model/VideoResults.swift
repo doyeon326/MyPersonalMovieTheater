@@ -8,12 +8,10 @@
 import Foundation
 
 struct VideoResults: Decodable {
-    let details: [VideoKey]
-    private enum Codingkeys: String, CodingKey {
-        case details = "results"
-    }
+    let results: [VideoKey]
 }
 
 struct VideoKey: Decodable {
     let key: String
+    let id: String
 }

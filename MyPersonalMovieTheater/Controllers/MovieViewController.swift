@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Cosmos
 
 class MovieViewController: UIViewController {
 
@@ -24,6 +25,7 @@ class MovieViewController: UIViewController {
         movieViewModel.fetchMovies {
             self.tableView.reloadData()
         }
+  
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = self.tableView.indexPathForSelectedRow{

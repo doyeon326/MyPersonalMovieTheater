@@ -225,6 +225,9 @@
                                                                 <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="playButtonTapped:" destination="UeG-lN-vBB" eventType="touchUpInside" id="4Xs-eL-E5z"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Murder On The Orient Express" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lGr-P2-rwN">
                                                         <rect key="frame" x="16" y="280" width="348" height="72"/>
@@ -399,7 +402,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cTn-7J-lK3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.105880551" green="0.087494857610000004" blue="0.1870341301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uYe-01-n1P" firstAttribute="height" secondItem="UDu-UY-5Cl" secondAttribute="height" priority="250" id="8e5-az-NZx"/>
                             <constraint firstItem="uXW-d4-eUj" firstAttribute="leading" secondItem="cTn-7J-lK3" secondAttribute="leading" id="9IS-0r-9SN"/>
@@ -416,6 +419,8 @@
                         <outlet property="movieImg" destination="buw-HA-ugb" id="XwB-w2-b7a"/>
                         <outlet property="movieOverview" destination="VaV-i1-dCX" id="E4V-kg-FGy"/>
                         <outlet property="movieTitle" destination="lGr-P2-rwN" id="gRi-0X-HoZ"/>
+                        <outlet property="rating" destination="QdZ-8Q-Rkd" id="hNM-03-ORg"/>
+                        <outlet property="ratingInStar" destination="gl9-zz-LsT" id="0k7-Rb-eTa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7S8-cZ-TjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -473,11 +478,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="211" height="271"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Czm-PG-kfs">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Czm-PG-kfs">
                                                     <rect key="frame" x="10" y="10" width="191" height="251"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Czm-PG-kfs" secondAttribute="trailing" constant="10" id="10A-51-VuX"/>
                                                 <constraint firstItem="Czm-PG-kfs" firstAttribute="top" secondItem="p92-lk-evQ" secondAttribute="top" constant="10" id="Lwa-2g-0XF"/>
@@ -486,6 +491,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="211" height="271"/>
+                                        <connections>
+                                            <outlet property="RelatedMovieImg" destination="Czm-PG-kfs" id="73k-MN-8cX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -526,9 +534,6 @@
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

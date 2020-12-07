@@ -10,12 +10,20 @@ import Foundation
 class API {
     
     static let apiKey = "7e9668bd55961d140e7ec7cbf4f25cf4"
-    
+    //https://api.themoviedb.org/3/movie/33432/similar?api_key=7e9668bd55961d140e7ec7cbf4f25cf4&language=en-US&page=1
     static func loadMovies(_ page: Int, completion: @escaping ([Movie]) -> Void) {
         let session = URLSession(configuration: .default)
-    
-        var urlComponents = URLComponents(string: "https://api.themoviedb.org/3/movie/now_playing?")!
-        //https://api.themoviedb.org/3/movie/now_playing?api_key=7e9668bd55961d140e7ec7cbf4f25cf4&language=en-US&page=2
+        
+        var str = ""
+        if MovieViewModel.shared.isTodaysMovie {
+            str = "https://api.themoviedb.org/3/movie/now_playing?"
+        }
+        else{
+            str = "https://api.themoviedb.org/3/movie/\(MovieViewModel.shared.movies[MovieViewModel.shared.selectedMovieIndex].id)/similar?"
+            print("string: \(str), value: \(MovieViewModel.shared.isTodaysMovie),movieId: \(MovieViewModel.shared.movies[MovieViewModel.shared.selectedMovieIndex].id)")
+        }
+      
+        var urlComponents = URLComponents(string: str)!
         let apiQuery = URLQueryItem(name: "api_key", value: apiKey)
         let languageQuery = URLQueryItem(name: "language", value: "en-US")
         let pageQuery = URLQueryItem(name: "page", value: "\(page)")
@@ -38,7 +46,7 @@ class API {
                 return
             }
             let movies = API.decodeMovie(resultData)
-            print("##success!")
+            print("##MovieLoad success!")
             completion(movies)
         }
         dataTask.resume()
@@ -51,7 +59,7 @@ class API {
             let movie = response.movies
             return movie
         } catch let error {
-            print("##decodingError: \(error.localizedDescription)")
+            print("##MovieLoad decodingError: \(error.localizedDescription)")
             return []
         }
         
@@ -81,7 +89,7 @@ class API {
                 return
             }
             let movieDetail = API.decodeMovieDetail(resultData)
-            print("##success!")
+            print("##MovieDetail success!")
             completion(movieDetail)
         }
         dataTask.resume()
@@ -95,11 +103,51 @@ class API {
             let genres = response.genres
             return genres
         } catch let error {
-            print("##decodingError: \(error.localizedDescription)")
+            print("##MovieDetail decodingError: \(error.localizedDescription)")
             return []
         }
         
     }
+    static func loadVideo(_ movieId: Int, completion: @escaping ([VideoKey]) -> Void) {
+        let session = URLSession(configuration: .default)
+        var urlComponents = URLComponents(string: "https://api.themoviedb.org/3/movie/\(movieId)/videos?")!
+        //https://api.themoviedb.org/3/movie/590706/videos?api_key=7e9668bd55961d140e7ec7cbf4f25cf4&language=en-US
+        let apiQuery = URLQueryItem(name: "api_key", value: apiKey)
+        let languageQuery = URLQueryItem(name: "language", value: "en-US")
+        urlComponents.queryItems?.append(apiQuery)
+        urlComponents.queryItems?.append(languageQuery)
+        
+        let requestURL = urlComponents.url!
+        let dataTask = session.dataTask(with: requestURL) { data, response, error in
+            let successRange = 200..<300
+            
+            guard error == nil,
+                  let statusCode = (response as? HTTPURLResponse)?.statusCode,
+                  successRange.contains(statusCode) else {
+                return
+            }
+            guard let resultData = data else {
+                return
+            }
+//            let str = String(decoding: resultData, as: UTF8.self)
+//            print("#######\(str.description)")
+            let movieVideo = API.decodeVideo(resultData)
+            print("##LoadVideo success!")
+            completion(movieVideo)
+        }
+        dataTask.resume()
+    }
     
-    
+    static func decodeVideo (_ data: Data) -> [VideoKey] {
+        do{
+            let decoder = JSONDecoder()
+            let response = try decoder.decode(VideoResults.self, from: data)
+            let videoKey = response.results
+            
+            return videoKey
+        } catch let error {
+            print("##LoadVideo decodingError: \(error.localizedDescription)")
+            return []
+        }
+    }
 }
