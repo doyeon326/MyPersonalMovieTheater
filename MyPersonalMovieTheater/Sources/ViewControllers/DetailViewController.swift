@@ -31,7 +31,7 @@ class DetailViewController: UIViewController {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
-        //한발짝 느림..
+
         MovieViewModel.shared.genres = []
         MovieViewModel.shared.fetchMovieDetail{
             self.genresCollectionView.reloadData()
@@ -47,7 +47,13 @@ class DetailViewController: UIViewController {
         print(movieViewModel.movies.count)
         movieTitle.text = movieViewModel.movies[movieViewModel.fetchMovieIndex()].title
         movieOverview.text = movieViewModel.movies[movieViewModel.fetchMovieIndex()].overview
-        let url = URL(string:"\(baseUrl)\( movieViewModel.movies[movieViewModel.fetchMovieIndex()].posterPath)")
+        
+        /// # Review 6-3 [반복되는 상수 정의] [Fixed]
+          /// 아래처럼 url 객체를 만들 때, 아예 URL extension 에서 정의한 초기화 메소드로 해주게 되면 baseUrl을 반복적으로 각 ViewController마다 써줄 필요가 없을 거에요. 나머지도 작업해보세요!
+  //        let url = URL(string:"\(baseUrl)\( movieViewModel.movies[movieViewModel.fetchMovieIndex()].posterPath)")
+
+        let imagePath = movieViewModel.movies[movieViewModel.fetchMovieIndex()].posterPath
+        let url = URL(image: imagePath)
         movieImg.kf.setImage(with: url)
         rating.text = "\(movieViewModel.movies[movieViewModel.fetchMovieIndex()].rating)"
         ratingInStar.rating = movieViewModel.movies[movieViewModel.fetchMovieIndex()].rating / 2
@@ -93,3 +99,4 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 90, height: 48)
     }
 }
+
