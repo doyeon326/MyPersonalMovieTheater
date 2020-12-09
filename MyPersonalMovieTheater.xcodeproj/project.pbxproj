@@ -106,12 +106,7 @@
 		EA5EAFC92570DE29003075FD /* MyPersonalMovieTheater */ = {
 			isa = PBXGroup;
 			children = (
-				F9ED45A82580CEE600BDDEC4 /* App */,
-				EA5EB005257142AD003075FD /* ViewModel */,
-				EA5EAFFA25712D52003075FD /* Model */,
-				EA5EAFE42570E161003075FD /* ViewControllers */,
-				EA5EAFE22570E0F9003075FD /* Views */,
-				EA5EAFE12570E035003075FD /* Network */,
+				F9ED45AA2580CFA200BDDEC4 /* Sources */,
 				EA5EAFE02570E00E003075FD /* Resources */,
 				EA5EAFDF2570DFD6003075FD /* Supportings */,
 			);
@@ -200,6 +195,19 @@
 				EA5EAFCC2570DE29003075FD /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		F9ED45AA2580CFA200BDDEC4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F9ED45A82580CEE600BDDEC4 /* App */,
+				EA5EB005257142AD003075FD /* ViewModel */,
+				EA5EAFFA25712D52003075FD /* Model */,
+				EA5EAFE42570E161003075FD /* ViewControllers */,
+				EA5EAFE22570E0F9003075FD /* Views */,
+				EA5EAFE12570E035003075FD /* Network */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
