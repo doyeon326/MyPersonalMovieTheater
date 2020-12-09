@@ -8,9 +8,7 @@
 import UIKit
 import Kingfisher
 
-class RelatedMovieViewController:
-    
-    UIViewController {
+class RelatedMovieViewController: UIViewController {
     let baseUrl = "https://image.tmdb.org/t/p/w185/"
     var movieViewModel = MovieViewModel.shared
     
