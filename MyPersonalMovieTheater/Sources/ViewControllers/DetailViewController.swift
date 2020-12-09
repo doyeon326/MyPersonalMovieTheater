@@ -14,8 +14,11 @@ class DetailViewController: UIViewController {
     let baseUrl = "https://image.tmdb.org/t/p/w300/"
     var movieViewModel = MovieViewModel.shared //need to be stored in sperate Class
     
-    //var gernes: [String] = ["Action","Comedy","Romance","Horror"]
-
+    /// # Review 6-1 [반복되는 상수 정의]
+    /// baseUrl은 지금 PlayerViewController를 제외하고는 모든 곳에서 사용되고 있네요!
+    /// 여러가지 방법으로 해결해 볼 수 있겠는데요
+    /// 우선 이런 상수를 별도로 Constant enum을 선언해서 사용해도 괜찮구요.
+    /// 두번째 방법은 Review 6-2로 오세요.
  
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var ratingInStar: CosmosView!
@@ -79,7 +82,6 @@ extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenresCell", for: indexPath) as? GenresCollectionViewCell else { return UICollectionViewCell() }
         cell.gernes.text = movieViewModel.genres[indexPath.row].name
-       // cell.gernes.text = gernes[indexPath.row]
         return cell
     }
     

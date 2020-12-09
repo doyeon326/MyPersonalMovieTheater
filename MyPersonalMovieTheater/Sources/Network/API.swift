@@ -9,8 +9,8 @@ import Foundation
 
 class API {
     
-    static let apiKey = "7e9668bd55961d140e7ec7cbf4f25cf4"
-    //https://api.themoviedb.org/3/movie/33432/similar?api_key=7e9668bd55961d140e7ec7cbf4f25cf4&language=en-US&page=1
+    static let apiKey = MyMovieApiKey.apiKey
+
     static func loadMovies(_ page: Int, completion: @escaping ([Movie]) -> Void) {
         let session = URLSession(configuration: .default)
         
