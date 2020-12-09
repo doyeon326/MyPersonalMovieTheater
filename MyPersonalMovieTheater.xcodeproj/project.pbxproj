@@ -106,9 +106,10 @@
 		EA5EAFC92570DE29003075FD /* MyPersonalMovieTheater */ = {
 			isa = PBXGroup;
 			children = (
-				EA5EB005257142AD003075FD /* View Model */,
+				F9ED45A82580CEE600BDDEC4 /* App */,
+				EA5EB005257142AD003075FD /* ViewModel */,
 				EA5EAFFA25712D52003075FD /* Model */,
-				EA5EAFE42570E161003075FD /* Controllers */,
+				EA5EAFE42570E161003075FD /* ViewControllers */,
 				EA5EAFE22570E0F9003075FD /* Views */,
 				EA5EAFE12570E035003075FD /* Network */,
 				EA5EAFE02570E00E003075FD /* Resources */,
@@ -128,8 +129,7 @@
 		EA5EAFE02570E00E003075FD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EA5EAFCA2570DE29003075FD /* AppDelegate.swift */,
-				EA5EAFCC2570DE29003075FD /* SceneDelegate.swift */,
+				EA5EAFE32570E106003075FD /* Storyboards */,
 				EA5EAFD32570DE2D003075FD /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -146,7 +146,6 @@
 		EA5EAFE22570E0F9003075FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EA5EAFE32570E106003075FD /* Storyboards */,
 				EA5EAFF32571166D003075FD /* MovieTableViewCell.swift */,
 				EA2D244C257A7C5F0000FFCA /* GenresCollectionViewCell.swift */,
 				EAD8A8FD257CCE7F0011D6DB /* PlayerView.swift */,
@@ -164,7 +163,7 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		EA5EAFE42570E161003075FD /* Controllers */ = {
+		EA5EAFE42570E161003075FD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				EA5EAFCE2570DE29003075FD /* MovieViewController.swift */,
@@ -172,7 +171,7 @@
 				EAB2E671257B6E9A006E4752 /* RelatedMovieViewController.swift */,
 				EAD8A8FA257CCB8D0011D6DB /* PlayerViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		EA5EAFFA25712D52003075FD /* Model */ = {
@@ -186,12 +185,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		EA5EB005257142AD003075FD /* View Model */ = {
+		EA5EB005257142AD003075FD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				EA5EB02725721091003075FD /* MovieViewModel.swift */,
 			);
-			path = "View Model";
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F9ED45A82580CEE600BDDEC4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EA5EAFCA2570DE29003075FD /* AppDelegate.swift */,
+				EA5EAFCC2570DE29003075FD /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
