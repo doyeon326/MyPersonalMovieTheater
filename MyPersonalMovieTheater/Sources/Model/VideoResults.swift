@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct VideoResults: Decodable {
+struct VideoResults: Codable {
     let results: [VideoKey]
 }
 
-struct VideoKey: Decodable {
+struct VideoKey: Codable {
     let key: String
     let id: String
 }
