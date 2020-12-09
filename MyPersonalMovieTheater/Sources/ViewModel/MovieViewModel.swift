@@ -34,7 +34,7 @@ class MovieViewModel {
     
     func fetchMovies(completionHandler: @escaping () -> Void) {
         self.isTodaysMovie = true
-        API.loadMovies(1) { movies in
+        API.loadMovies(1) { (movies) in
             DispatchQueue.main.async {
                 self.movies = movies
                // self.movies.append(contentsOf: movies)

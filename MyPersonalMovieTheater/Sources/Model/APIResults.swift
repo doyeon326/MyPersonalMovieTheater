@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIResults: Decodable {
+struct APIResults: Codable {
     let page: Int
     let numResults: Int
     let numPages: Int
