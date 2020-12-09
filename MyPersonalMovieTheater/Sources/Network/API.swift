@@ -8,10 +8,7 @@
 import Foundation
 
 class API {
-    
-    
-    static let apiKey = "7e9668bd55961d140e7ec7cbf4f25cf4"
-    //https://api.themoviedb.org/3/movie/33432/similar?api_key=7e9668bd55961d140e7ec7cbf4f25cf4&language=en-US&page=1
+    static let apiKey = MyMovieApiKey.apiKey
     static func loadMovies(_ page: Int, completion: @escaping ([Movie]) -> Void) {
         let session = URLSession(configuration: .default)
         
@@ -69,7 +66,6 @@ class API {
     static func loadMovieDetail(_ movieId: Int, completion: @escaping ([Genres]) -> Void) {
         let session = URLSession(configuration: .default)
         var urlComponents = URLComponents(string: "https://api.themoviedb.org/3/movie/\(movieId)?")!
-        //https://api.themoviedb.org/3/movie/62345?api_key=7e9668bd55961d140e7ec7cbf4f25cf4&language=en-US
         let apiQuery = URLQueryItem(name: "api_key", value: apiKey)
         let languageQuery = URLQueryItem(name: "language", value: "en-US")
         urlComponents.queryItems?.append(apiQuery)
@@ -112,7 +108,6 @@ class API {
     static func loadVideo(_ movieId: Int, completion: @escaping ([VideoKey]) -> Void) {
         let session = URLSession(configuration: .default)
         var urlComponents = URLComponents(string: "https://api.themoviedb.org/3/movie/\(movieId)/videos?")!
-        //https://api.themoviedb.org/3/movie/590706/videos?api_key=7e9668bd55961d140e7ec7cbf4f25cf4&language=en-US
         let apiQuery = URLQueryItem(name: "api_key", value: apiKey)
         let languageQuery = URLQueryItem(name: "language", value: "en-US")
         urlComponents.queryItems?.append(apiQuery)
