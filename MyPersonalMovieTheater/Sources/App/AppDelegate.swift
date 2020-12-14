@@ -10,14 +10,6 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    /// # Review 9 [Resources 디렉토리 분류] [Fixed?]
-    /// AppDelegate와 SceneDelegate가 Resources 디렉토리에 분류되어 있는데
-    /// 이 둘은 Appliation이라는 디렉토리로 분류하는 편이 더 맞는 것 같습니다.
-    ///
-    /// # Review 10 [.gitignore 위치] [Fixed]
-    /// 그리고 .gitignore파일이 현재 Supportings에 들어가있어서 gitignore가 정상적으로 동작을 안하고 있네요.
-    /// 이거는 프로젝트 최상단(xcworkspace가 있는 위치)에 위치해야합니다.
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
